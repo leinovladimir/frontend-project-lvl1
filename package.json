@@ -1,6 +1,6 @@
 {
   "name": "frontend-project-lvl1",
-  "type" : "module",
+  "type": "module",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/leinovladimir/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/leinovladimir/frontend-project-lvl1/actions)",
   "main": "index.js",
@@ -22,5 +22,10 @@
   },
   "dependencies": {
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "eslint": "^8.20.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
   }
 }
