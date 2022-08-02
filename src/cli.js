@@ -1,5 +1,4 @@
-/* eslint no-console: [0, { allow: ["warn", "error"] }] */
-
+/* eslint-disable no-console */
 import readlineSync from 'readline-sync';
 
 const greetings = () => {
