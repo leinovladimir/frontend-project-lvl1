@@ -17,9 +17,10 @@ for (const num of numList) {
     const givenAnswer = readlineSync.question(`Your answer: `);
     if (expectedAnswer == givenAnswer) { 
         console.log('Correct!');
-        win = true
+        win = true;
     } else {
         console.log(`'${givenAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.\nLet's try again, ${name}!`)
+        win = false;
         break;
     }
 }
