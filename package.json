@@ -1,32 +1,43 @@
 {
-  "name": "frontend-project-lvl1",
-  "type": "module",
-  "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/leinovladimir/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/leinovladimir/frontend-project-lvl1/actions)",
-  "main": "index.js",
+  "name": "brain-games-s474",
+  "version": "1.0.11",
+  "description": "brain-games project",
+  "main": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/leinovladimir/frontend-project-lvl1.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/leinovladimir/frontend-project-lvl1/issues"
-  },
-  "homepage": "https://github.com/leinovladimir/frontend-project-lvl1#readme",
   "bin": {
-    "brain-games": "bin/brain-games.js",
-    "brain-even": "bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js",
+    "brain-gcd": "dist/bin/brain-gcd.js",
+    "brain-progression": "dist/bin/brain-progression.js",
+    "brain-prime": "dist/bin/brain-prime.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "project",
+    "brain",
+    "games",
+    "hexlet"
+  ],
+  "author": "Lev A",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.3",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
   },
   "dependencies": {
-    "readline-sync": "^1.4.10"
-  },
-  "devDependencies": {
-    "eslint": "^8.20.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0"
+    "hexlet-pairs": "^1.0.8",
+    "readline-sync": "^1.4.9"
   }
 }
