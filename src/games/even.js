@@ -1,15 +1,14 @@
-import { cons } from 'hexlet-pairs';
-import playGame from '..';
-import getRandom from '../utils';
+import { generateRandomInt } from '../utils.js';
 
-const description = 'Answer "yes" if number even otherwise answer "no".';
+const isEven = (num) => num % 2 === 0;
 
-const isEven = number => number % 2;
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+const makeRound = () => {
+  const number = generateRandomInt(1, 20);
+  const correctAnswer = isEven(number) ? 'yes' : 'no';
+  const question = number.toString();
 
-const generateData = () => {
-  const question = getRandom(1, 100);
-  const rightAnswer = isEven(question) ? 'no' : 'yes';
-  return cons(question, rightAnswer);
+  return { correctAnswer, question };
 };
 
-export default () => playGame(generateData, description);
+export default { description, makeRound };

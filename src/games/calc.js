@@ -1,24 +1,29 @@
-import { cons, car, cdr } from 'hexlet-pairs';
-import playGame from '..';
-import getRandom from '../utils';
+import { generateRandomInt, getRandomElement } from '../utils.js';
 
-const description = 'What is the result of the expression?';
-
-const operators = [
-  cons('+', (a, b) => (a + b)),
-  cons('-', (a, b) => (a - b)),
-  cons('*', (a, b) => (a * b)),
-];
-
-const generateData = () => {
-  const num1 = getRandom(0, 100);
-  const num2 = getRandom(0, 100);
-  const operator = operators[getRandom(0, operators.length - 1)];
-  const sign = car(operator);
-  const operation = cdr(operator);
-  const question = `${num1} ${sign} ${num2}`;
-  const rightAnswer = String(operation(num1, num2));
-  return cons(question, rightAnswer);
+const calculate = (operator, num1, num2) => {
+  switch (operator) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+    default:
+      throw Error('Unknown operator');
+  }
 };
 
-export default () => playGame(generateData, description);
+const description = 'What is the result of the expression?';
+const makeRound = () => {
+  const number1 = generateRandomInt(1, 10);
+  const number2 = generateRandomInt(1, 10);
+  const operator = getRandomElement(['+', '-', '*']);
+
+  const correctAnswer = calculate(operator, number1, number2).toString();
+
+  const question = `${number1} ${operator} ${number2}`;
+
+  return { correctAnswer, question };
+};
+
+export default { description, makeRound };

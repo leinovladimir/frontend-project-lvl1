@@ -1,31 +1,24 @@
-import { cons } from 'hexlet-pairs';
-import playGame from '..';
-import getRandom from '../utils';
+import { generateRandomInt } from '../utils.js';
+
+const makeProgression = (startValue, step, length) => (new Array(length))
+  .fill(startValue)
+  .map((element, currentIndex) => (element + step * currentIndex));
 
 const description = 'What number is missing in the progression?';
+const makeRound = () => {
+  const progressionStart = generateRandomInt(1, 50);
+  const progressionLength = 10;
+  const hiddenElementIndex = generateRandomInt(0, progressionLength - 1);
+  const progressionStep = generateRandomInt(1, 5);
 
-const length = 10;
+  const progression = makeProgression(progressionStart, progressionStep, progressionLength);
 
-const getQuestion = (start, step, indexOfMissingElement) => {
-  let question = '';
-  for (let i = 0; i < length; i += 1) {
-    if (i === indexOfMissingElement) {
-      question = question.concat(' ..');
-    } else {
-      const currentElement = start + i * step;
-      question = question.concat(' ', currentElement);
-    }
-  }
-  return question;
+  const correctAnswer = progression[hiddenElementIndex].toString();
+
+  progression[hiddenElementIndex] = '..';
+  const question = progression.join(' ');
+
+  return { correctAnswer, question };
 };
 
-const generateData = () => {
-  const start = getRandom(1, 10);
-  const step = getRandom(1, 10);
-  const indexOfMissingElement = getRandom(0, length - 1);
-  const question = getQuestion(start, step, indexOfMissingElement);
-  const rightAnswer = String(start + indexOfMissingElement * step);
-  return cons(question, rightAnswer);
-};
-
-export default () => playGame(generateData, description);
+export default { description, makeRound };

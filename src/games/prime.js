@@ -1,25 +1,26 @@
-import { cons } from 'hexlet-pairs';
-import playGame from '..';
-import getRandom from '../utils';
+import { generateRandomInt } from '../utils.js';
 
-const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-
-const isPrime = (number) => {
-  if (number < 2) {
+const isPrime = (num) => {
+  if (num < 2) {
     return false;
   }
-  for (let i = 2; i < number; i += 1) {
-    if (number % i === 0) {
+
+  for (let i = 2; i <= Math.sqrt(num); i += 1) {
+    if (num % i === 0) {
       return false;
     }
   }
+
   return true;
 };
 
-const generateData = () => {
-  const question = getRandom(1, 100);
-  const rightAnswer = isPrime(question) ? 'yes' : 'no';
-  return cons(question, rightAnswer);
+const description = 'Answer "yes" if the number is prime, otherwise answer "no".';
+const makeRound = () => {
+  const number = generateRandomInt(1, 23);
+  const correctAnswer = isPrime(number) ? 'yes' : 'no';
+  const question = number.toString();
+
+  return { correctAnswer, question };
 };
 
-export default () => playGame(generateData, description);
+export default { description, makeRound };

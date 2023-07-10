@@ -1,36 +1,43 @@
-## Brain Games (Hexlet project: lvl1-s474)
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/0e93cb25d8a14ee0ec71/maintainability)](https://codeclimate.com/github/lev33/project-lvl1-s474/maintainability)[![Build Status](https://travis-ci.org/lev33/project-lvl1-s474.svg?branch=master)](https://travis-ci.org/lev33/project-lvl1-s474)
+<a href="https://codeclimate.com/github/fey/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/d2eca04515318a65b16b/maintainability" /></a><img src="https://github.com/fey/frontend-project-lvl1/workflows/CI/badge.svg" />
 
 
-#### Installation:
+#
+## Installation
 
-npm install -g brain-games-s474
+```sh
+$ make install
+$ make lint
+$ make publish
+```
 
-#### Run games:
+## Is Even
 
-*  $ brain-even
-*  $ brain-calc
-*  $ brain-gcd
-*  $ brain-progression
-*  $ brain-prime
+Run 
+```sh
+$ npx brain-even
+```
+https://asciinema.org/a/0QKIep1graYMqpyrDbUq7EfiE
 
-#### brain-even
+## Calc
+```sh
+$ npx brain-calc
+```
+https://asciinema.org/a/kJYw4gd0pyyRtZhkKNLeP6uA2
 
-[![asciicast](https://asciinema.org/a/OKiWhyG8Sy6hdxXvpkbVsOeSc.svg)](https://asciinema.org/a/OKiWhyG8Sy6hdxXvpkbVsOeSc)
+## GCD
+```sh
+$ npx brain-calc
+```
+https://asciinema.org/a/L1Z2KGuJBDkvUb1Tp0j56oO8Y
 
-#### brain-calc
+## Progression
+```sh
+$ npx brain-progression
+```
+https://asciinema.org/a/QEKyY6t3Sydr4kNzAW8MfcGIy
 
-[![asciicast](https://asciinema.org/a/r4RQncaL8tbMwHJITxrFGTDKC.svg)](https://asciinema.org/a/r4RQncaL8tbMwHJITxrFGTDKC)
-
-#### brain-gcd
-
-[![asciicast](https://asciinema.org/a/UevlKSBy6L0GuF59SbyuQHrop.svg)](https://asciinema.org/a/UevlKSBy6L0GuF59SbyuQHrop)
-
-#### brain-progression
-
-[![asciicast](https://asciinema.org/a/SUTqxCc3b4hfgncMP5XEDNctm.svg)](https://asciinema.org/a/SUTqxCc3b4hfgncMP5XEDNctm)
-
-#### brain-prime
-
-[![asciicast](https://asciinema.org/a/aZ4IbLI90ohRs1BVfwWyDo7z4.svg)](https://asciinema.org/a/aZ4IbLI90ohRs1BVfwWyDo7z4)
+## Prime
+```sh
+$ npx brain-prime
+```
+https://asciinema.org/a/sLp9QoUR7x15Lws0n9VO0kM4i

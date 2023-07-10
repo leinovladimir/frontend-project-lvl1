@@ -1,44 +1,39 @@
 {
-  "name": "@hexlet/code",
-  "version": "1.0.11",
-  "description": "brain-games project",
-  "main": "",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-    "prepublishOnly": "npm run build"
+  "name": "frontend-project-lvl1",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Brain Games is bundle of mini-games with command-line interface",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fey/frontend-project-lvl1.git"
   },
-  "bin": {
-    "brain-games": "dist/bin/brain-even.js",
-    "brain-even": "dist/bin/brain-even.js",
-    "brain-calc": "dist/bin/brain-calc.js",
-    "brain-gcd": "dist/bin/brain-gcd.js",
-    "brain-progression": "dist/bin/brain-progression.js",
-    "brain-prime": "dist/bin/brain-prime.js"
-  },
-  "files": [
-    "dist"
-  ],
   "keywords": [
-    "project",
-    "brain",
-    "games",
-    "hexlet"
+    "hexlet",
+    "brain-games",
+    "cli",
+    "project"
   ],
-  "author": "Lev A",
-  "license": "ISC",
+  "author": "feycot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fey/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/fey/frontend-project-lvl1#readme",
+  "bin": {
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js",
+    "brain-calc": "bin/brain-calc.js",
+    "brain-gcd": "bin/brain-gcd.js",
+    "brain-progression": "bin/brain-progression.js",
+    "brain-prime": "bin/brain-prime.js"
+  },
   "devDependencies": {
-    "@babel/cli": "^7.4.3",
-    "@babel/core": "^7.4.3",
-    "@babel/node": "^7.2.2",
-    "@babel/preset-env": "^7.4.3",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0"
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0"
   },
   "dependencies": {
-    "hexlet-pairs": "^1.0.8",
-    "readline-sync": "^1.4.9"
+    "promptly": "^3.0.3"
   }
 }

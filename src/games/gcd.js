@@ -1,24 +1,15 @@
-import { cons } from 'hexlet-pairs';
-import playGame from '..';
-import getRandom from '../utils';
+import { generateRandomInt } from '../utils.js';
+
+const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
 
 const description = 'Find the greatest common divisor of given numbers.';
+const makeRound = () => {
+  const number1 = generateRandomInt(1, 30);
+  const number2 = generateRandomInt(1, 30);
+  const correctAnswer = gcd(number1, number2).toString();
+  const question = `${number1} ${number2}`;
 
-const getGCD = (a, b) => {
-  if (a === b) {
-    return a;
-  }
-  const c = (a > b) ? b : a;
-  const d = (a > b) ? a : b;
-  return getGCD(c, d - c);
+  return { correctAnswer, question };
 };
 
-const generateData = () => {
-  const num1 = getRandom(1, 100);
-  const num2 = getRandom(1, 100);
-  const question = `${num1} ${num2}`;
-  const rightAnswer = String(getGCD(num1, num2));
-  return cons(question, rightAnswer);
-};
-
-export default () => playGame(generateData, description);
+export default { description, makeRound };
